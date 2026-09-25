@@ -4,14 +4,12 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#2563eb">
-<title>🏢 نظام ERP المحاسبي - الأسبوع 1</title>
-<link rel="manifest" href="manifest.json">
+<title>🏢 نظام ERP المحاسبي</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',Tahoma,Arial,sans-serif}
 :root{--primary:#2563eb;--success:#10b981;--danger:#ef4444;--warning:#f59e0b;--dark:#1e293b;--light:#f8fafc;--border:#e2e8f0}
 body{background:var(--light);color:var(--dark);min-height:100vh;display:flex;flex-direction:column}
 .container{max-width:1400px;margin:0 auto;padding:0 20px;width:100%}
-
 .login-screen{min-height:100vh;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#1e3a8a,#2563eb);padding:20px}
 .login-box{background:#fff;padding:40px;border-radius:16px;box-shadow:0 20px 60px rgba(0,0,0,.3);max-width:420px;width:100%}
 .login-box h1{text-align:center;color:var(--primary);margin-bottom:8px;font-size:1.6rem}
@@ -21,8 +19,7 @@ body{background:var(--light);color:var(--dark);min-height:100vh;display:flex;fle
 .form-group input,.form-group select{width:100%}
 .login-info{margin-top:25px;padding-top:20px;border-top:1px solid var(--border);text-align:center;font-size:.85rem;color:#64748b}
 .login-info code{background:#f1f5f9;padding:2px 8px;border-radius:4px;color:var(--primary);font-weight:600}
-.btn-link{background:none;border:none;color:var(--primary);cursor:pointer;text-decoration:underline;margin-top:10px;font-size:.85rem}
-
+.btn-link{background:none;border:none;color:var(--primary);cursor:pointer;text-decoration:underline;margin-top:10px;font-size:.85rem;padding:5px}
 header{background:linear-gradient(135deg,#1e3a8a,#2563eb);color:#fff;padding:15px 0;box-shadow:0 4px 12px rgba(0,0,0,.1);position:sticky;top:0;z-index:100}
 .header-content{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:15px;padding-bottom:15px}
 .logo{display:flex;align-items:center;gap:15px;flex-wrap:wrap}
@@ -37,12 +34,10 @@ header{background:linear-gradient(135deg,#1e3a8a,#2563eb);color:#fff;padding:15p
 .main-nav{display:flex;gap:6px;flex-wrap:wrap;padding-top:10px;border-top:1px solid rgba(255,255,255,.15)}
 .nav-btn{background:transparent;color:#fff;border:none;padding:10px 16px;border-radius:8px;cursor:pointer;font-size:.9rem;font-weight:500;font-family:inherit;transition:.3s;white-space:nowrap}
 .nav-btn:hover,.nav-btn.active{background:rgba(255,255,255,.2)}
-
 main{flex:1;padding:25px 20px}
 .page{display:none;animation:fadeIn .3s}
 .page.active{display:block}
 @keyframes fadeIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
-
 .stats-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px;margin-bottom:25px}
 .stat-card{background:#fff;padding:22px;border-radius:12px;box-shadow:0 2px 8px rgba(0,0,0,.05);border-right:5px solid var(--primary);transition:transform .3s}
 .stat-card:hover{transform:translateY(-3px);box-shadow:0 8px 20px rgba(0,0,0,.1)}
@@ -52,13 +47,11 @@ main{flex:1;padding:25px 20px}
 .stat-card.count{border-color:var(--warning)}
 .stat-card h3{color:#64748b;font-size:.85rem;margin-bottom:10px;font-weight:600}
 .stat-card .amount{font-size:1.5rem;font-weight:bold;color:var(--dark)}
-
 .card{background:#fff;padding:25px;border-radius:12px;box-shadow:0 2px 8px rgba(0,0,0,.05);margin-bottom:25px}
 .card h2{margin-bottom:20px;color:var(--dark);font-size:1.15rem}
 .card h3{margin-bottom:15px;color:var(--dark);font-size:1rem}
 .card-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:20px;flex-wrap:wrap;gap:15px}
 .filters{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
-
 .form-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:15px;align-items:end}
 input,select,button,textarea{padding:11px 14px;border:2px solid var(--border);border-radius:8px;font-size:.9rem;font-family:inherit;transition:.3s;background:#fff}
 input:focus,select:focus,textarea:focus{outline:none;border-color:var(--primary)}
@@ -71,7 +64,6 @@ button{cursor:pointer;font-weight:600}
 .btn-success{background:var(--success);color:#fff;border-color:var(--success);padding:6px 12px;font-size:.8rem}
 .btn-warning{background:var(--warning);color:#fff;border-color:var(--warning);padding:6px 10px;font-size:.8rem}
 .btn-block{width:100%;padding:14px;font-size:1rem}
-
 .table-wrapper{overflow-x:auto}
 table{width:100%;border-collapse:collapse}
 table th,table td{padding:11px;text-align:right;border-bottom:1px solid var(--border);font-size:.9rem}
@@ -86,14 +78,11 @@ table tbody tr:hover{background:#f1f5f9}
 .text-income{color:var(--success);font-weight:bold}
 .text-expense{color:var(--danger);font-weight:bold}
 .empty-state{text-align:center;padding:40px;color:#94a3b8}
-
-.account-tree{padding-right:0}
-.account-item{padding:10px 15px;border-right:3px solid transparent;margin-bottom:2px;background:#fff;border-radius:6px;display:flex;justify-content:space-between;align-items:center;cursor:pointer;transition:.2s}
+.account-item{padding:10px 15px;border-right:3px solid transparent;margin-bottom:2px;background:#fff;border-radius:6px;display:flex;justify-content:space-between;align-items:center;transition:.2s}
 .account-item:hover{background:#f1f5f9}
 .account-item.level-1{border-right-color:var(--primary);font-weight:bold;background:#f8fafc}
 .account-item.level-2{border-right-color:var(--success);padding-right:35px;background:#fafafa}
 .account-item.level-3{border-right-color:var(--warning);padding-right:55px;font-size:.9rem}
-
 .modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,.5);display:none;align-items:center;justify-content:center;z-index:9998;padding:20px}
 .modal-overlay.active{display:flex}
 .modal{background:#fff;border-radius:12px;max-width:900px;width:100%;max-height:90vh;overflow-y:auto;animation:modalIn .3s}
@@ -101,27 +90,19 @@ table tbody tr:hover{background:#f1f5f9}
 .modal-header{display:flex;justify-content:space-between;align-items:center;padding:20px;border-bottom:1px solid var(--border);position:sticky;top:0;background:#fff;z-index:10}
 .modal-close{background:none;border:none;font-size:1.2rem;cursor:pointer;color:#64748b}
 .modal-body{padding:25px}
-
 .entry-line{display:grid;grid-template-columns:3fr 2fr 1fr 1fr auto;gap:8px;margin-bottom:8px;align-items:center}
 .entry-line select,.entry-line input{padding:8px;font-size:.85rem}
-
 footer{background:var(--dark);color:#fff;text-align:center;padding:20px;margin-top:auto;font-size:.9rem}
 .toast{position:fixed;bottom:30px;left:50%;transform:translateX(-50%);background:var(--success);color:#fff;padding:15px 30px;border-radius:10px;box-shadow:0 4px 12px rgba(0,0,0,.2);z-index:9999;font-weight:600;animation:slideUp .3s}
 .toast.error{background:var(--danger)}
 @keyframes slideUp{from{opacity:0;transform:translate(-50%,20px)}to{opacity:1;transform:translate(-50%,0)}}
-
 @media(max-width:768px){
 .main-nav{overflow-x:auto;flex-wrap:nowrap;padding-bottom:5px}
 .nav-btn{font-size:.8rem;padding:8px 12px}
 .form-grid{grid-template-columns:1fr}
 .entry-line{grid-template-columns:1fr}
 }
-@media print{
-header,footer,.filters,button,nav,.modal-header{display:none!important}
-.modal-overlay{position:static;background:none;padding:0}
-.modal{box-shadow:none;max-width:none}
-.card{box-shadow:none;border:1px solid #ddd}
-}
+@media print{header,footer,.filters,button,nav,.modal-header{display:none!important}.modal-overlay{position:static;background:none;padding:0}.modal{box-shadow:none;max-width:none}.card{box-shadow:none;border:1px solid #ddd}}
 </style>
 </head>
 <body>
@@ -129,7 +110,7 @@ header,footer,.filters,button,nav,.modal-header{display:none!important}
 <div id="loginScreen" class="login-screen">
 <div class="login-box">
 <h1>🏢 نظام ERP المحاسبي</h1>
-<p class="subtitle">الوحدة المالية - الأسبوع 1</p>
+<p class="subtitle">الوحدة المالية</p>
 <form id="loginForm">
 <div class="form-group"><label>👤 اسم المستخدم</label><input type="text" id="loginUsername" value="admin" required></div>
 <div class="form-group"><label>🔐 كلمة المرور</label><input type="password" id="loginPassword" required></div>
@@ -138,6 +119,8 @@ header,footer,.filters,button,nav,.modal-header{display:none!important}
 <div class="login-info">
 <p><strong>الدخول:</strong> <code>admin</code> / <code>admin123</code></p>
 <button type="button" class="btn-link" onclick="seedDemoData()">🌱 تحميل بيانات تجريبية</button>
+<br>
+<button type="button" class="btn-link" onclick="resetDatabase()" style="color:#ef4444">🗑️ تصفير قاعدة البيانات</button>
 </div>
 </div>
 </div>
@@ -207,9 +190,7 @@ header,footer,.filters,button,nav,.modal-header{display:none!important}
 <option value="revenue">إيرادات</option>
 <option value="expense">مصروفات</option>
 </select>
-<select id="accountParent">
-<option value="">- بدون أب (حساب رئيسي) -</option>
-</select>
+<select id="accountParent"><option value="">- بدون أب (حساب رئيسي) -</option></select>
 <select id="accountNature" required>
 <option value="debit">مدين</option>
 <option value="credit">دائن</option>
@@ -219,7 +200,7 @@ header,footer,.filters,button,nav,.modal-header{display:none!important}
 </div>
 <div class="card">
 <h2>📒 شجرة الحسابات</h2>
-<div id="accountTree" class="account-tree"></div>
+<div id="accountTree"></div>
 </div>
 </div>
 
@@ -236,9 +217,7 @@ header,footer,.filters,button,nav,.modal-header{display:none!important}
 </select>
 <input type="text" id="fundBank" placeholder="اسم البنك (اختياري)">
 <input type="text" id="fundIBAN" placeholder="رقم الحساب (اختياري)">
-<select id="fundAccountId" required>
-<option value="">- ربط بحساب من دليل الحسابات -</option>
-</select>
+<select id="fundAccountId" required><option value="">- ربط بحساب -</option></select>
 <button type="submit" class="btn-primary">إضافة</button>
 </form>
 </div>
@@ -358,44 +337,23 @@ header,footer,.filters,button,nav,.modal-header{display:none!important}
 // ===============================
 const DB_NAME='ERPAccountingDB',DB_VERSION=1;
 let db=null;
-const STORES={
-users:'users',companies:'companies',accounts:'accounts',funds:'funds',
-entries:'entries',entryLines:'entryLines'
-};
+const STORES={users:'users',companies:'companies',accounts:'accounts',funds:'funds',entries:'entries',entryLines:'entryLines'};
 
 function openDB(){
 return new Promise((res,rej)=>{
 const r=indexedDB.open(DB_NAME,DB_VERSION);
 r.onupgradeneeded=e=>{
 const d=e.target.result;
-if(!d.objectStoreNames.contains(STORES.users)){
-const s=d.createObjectStore(STORES.users,{keyPath:'id',autoIncrement:true});
-s.createIndex('username','username',{unique:true});
-}
+if(!d.objectStoreNames.contains(STORES.users)){const s=d.createObjectStore(STORES.users,{keyPath:'id',autoIncrement:true});s.createIndex('username','username',{unique:true});}
 if(!d.objectStoreNames.contains(STORES.companies))d.createObjectStore(STORES.companies,{keyPath:'id',autoIncrement:true});
-if(!d.objectStoreNames.contains(STORES.accounts)){
-const s=d.createObjectStore(STORES.accounts,{keyPath:'id',autoIncrement:true});
-s.createIndex('companyId','companyId');
-s.createIndex('code','code');
-}
-if(!d.objectStoreNames.contains(STORES.funds)){
-const s=d.createObjectStore(STORES.funds,{keyPath:'id',autoIncrement:true});
-s.createIndex('companyId','companyId');
-}
-if(!d.objectStoreNames.contains(STORES.entries)){
-const s=d.createObjectStore(STORES.entries,{keyPath:'id',autoIncrement:true});
-s.createIndex('companyId','companyId');
-s.createIndex('date','date');
-}
-if(!d.objectStoreNames.contains(STORES.entryLines)){
-const s=d.createObjectStore(STORES.entryLines,{keyPath:'id',autoIncrement:true});
-s.createIndex('entryId','entryId');
-s.createIndex('accountId','accountId');
-s.createIndex('companyId','companyId');
-}
+if(!d.objectStoreNames.contains(STORES.accounts)){const s=d.createObjectStore(STORES.accounts,{keyPath:'id',autoIncrement:true});s.createIndex('companyId','companyId');s.createIndex('code','code');}
+if(!d.objectStoreNames.contains(STORES.funds)){const s=d.createObjectStore(STORES.funds,{keyPath:'id',autoIncrement:true});s.createIndex('companyId','companyId');}
+if(!d.objectStoreNames.contains(STORES.entries)){const s=d.createObjectStore(STORES.entries,{keyPath:'id',autoIncrement:true});s.createIndex('companyId','companyId');s.createIndex('date','date');}
+if(!d.objectStoreNames.contains(STORES.entryLines)){const s=d.createObjectStore(STORES.entryLines,{keyPath:'id',autoIncrement:true});s.createIndex('entryId','entryId');s.createIndex('accountId','accountId');s.createIndex('companyId','companyId');}
 };
 r.onsuccess=e=>{db=e.target.result;res()};
 r.onerror=e=>rej(e.target.error);
+r.onblocked=()=>{console.warn('DB blocked');rej(new Error('Database blocked'))};
 });
 }
 
@@ -422,25 +380,57 @@ expense:{label:'مصروفات',badge:'badge-expense',nature:'debit'}
 };
 
 // ===============================
+// تصفير قاعدة البيانات
+// ===============================
+async function resetDatabase(){
+if(!confirm('⚠️ سيتم حذف كل البيانات!\n\nهل أنت متأكد؟'))return;
+if(!confirm('تأكيد نهائي: لا يمكن التراجع!'))return;
+if(db)db.close();
+indexedDB.deleteDatabase(DB_NAME);
+localStorage.clear();
+sessionStorage.clear();
+showToast('✅ تم التصفير...');
+setTimeout(()=>location.reload(),1500);
+}
+
+// ===============================
 // المصادقة
 // ===============================
 async function initAuth(){
-const c=(await dbGetAll(STORES.users)).length;
-if(c===0){
+try{
+const users=await dbGetAll(STORES.users);
+console.log('عدد المستخدمين:',users.length);
+if(users.length===0){
+console.log('إنشاء المستخدم الافتراضي...');
 await dbAdd(STORES.users,{
-username:'admin',password:simpleHash('admin123'),
-fullName:'المدير العام',role:'admin',
+username:'admin',
+password:simpleHash('admin123'),
+fullName:'المدير العام',
+role:'admin',
 createdAt:new Date().toISOString()
 });
+console.log('تم إنشاء المستخدم الافتراضي');
+}
+}catch(e){
+console.error('خطأ في initAuth:',e);
 }
 }
 
 async function login(u,p){
+try{
 const user=await dbGetOne(STORES.users,'username',u);
-if(!user)return{ok:false,msg:'المستخدم غير موجود'};
-if(user.password!==simpleHash(p))return{ok:false,msg:'كلمة المرور خطأ'};
+console.log('المستخدم:',user);
+if(!user)return{ok:false,msg:'المستخدم غير موجود. اضغط تصفير قاعدة البيانات.'};
+const hash=simpleHash(p);
+if(user.password!==hash){
+return{ok:false,msg:'كلمة المرور خطأ'};
+}
 currentUser=user;
 return{ok:true,user};
+}catch(e){
+console.error('خطأ في login:',e);
+return{ok:false,msg:'خطأ: '+e.message};
+}
 }
 
 function logout(){currentUser=null;currentCompany=null;location.reload()}
@@ -453,90 +443,59 @@ async function getAllCompanies(){return await dbGetAll(STORES.companies)}
 async function addCompany(d){
 d.createdAt=new Date().toISOString();
 const id=await dbAdd(STORES.companies,d);
-// إنشاء دليل حسابات افتراضي كامل
 await createDefaultChartOfAccounts(id);
 return id;
 }
 
 async function createDefaultChartOfAccounts(companyId){
 const accounts=[
-// الأصول
-{code:'1',name:'الأصول',type:'asset',parentId:null,nature:'debit'},
-{code:'11',name:'الأصول المتداولة',type:'asset',parentId:null,nature:'debit'},
-{code:'1101',name:'الصندوق',type:'asset',parentId:null,nature:'debit'},
-{code:'1102',name:'البنك',type:'asset',parentId:null,nature:'debit'},
-{code:'1103',name:'العملاء',type:'asset',parentId:null,nature:'debit'},
-{code:'1104',name:'المخزون',type:'asset',parentId:null,nature:'debit'},
-{code:'1105',name:'مصروفات مدفوعة مقدماً',type:'asset',parentId:null,nature:'debit'},
-{code:'12',name:'الأصول الثابتة',type:'asset',parentId:null,nature:'debit'},
-{code:'1201',name:'أثاث ومعدات',type:'asset',parentId:null,nature:'debit'},
-{code:'1202',name:'سيارات',type:'asset',parentId:null,nature:'debit'},
-{code:'1290',name:'مجمع الإهلاك',type:'asset',parentId:null,nature:'credit'},
-// الالتزامات
-{code:'2',name:'الالتزامات',type:'liability',parentId:null,nature:'credit'},
-{code:'21',name:'الالتزامات المتداولة',type:'liability',parentId:null,nature:'credit'},
-{code:'2101',name:'الموردين',type:'liability',parentId:null,nature:'credit'},
-{code:'2102',name:'مصروفات مستحقة',type:'liability',parentId:null,nature:'credit'},
-{code:'2103',name:'ضريبة القيمة المضافة',type:'liability',parentId:null,nature:'credit'},
-{code:'2104',name:'رواتب مستحقة',type:'liability',parentId:null,nature:'credit'},
-{code:'22',name:'الالتزامات طويلة الأجل',type:'liability',parentId:null,nature:'credit'},
-{code:'2201',name:'قروض طويلة الأجل',type:'liability',parentId:null,nature:'credit'},
-// حقوق الملكية
-{code:'3',name:'حقوق الملكية',type:'equity',parentId:null,nature:'credit'},
-{code:'3101',name:'رأس المال',type:'equity',parentId:null,nature:'credit'},
-{code:'3102',name:'الأرباح المحتجزة',type:'equity',parentId:null,nature:'credit'},
-{code:'3103',name:'المسحوبات الشخصية',type:'equity',parentId:null,nature:'debit'},
-// الإيرادات
-{code:'4',name:'الإيرادات',type:'revenue',parentId:null,nature:'credit'},
-{code:'4101',name:'إيرادات المبيعات',type:'revenue',parentId:null,nature:'credit'},
-{code:'4102',name:'إيرادات الخدمات',type:'revenue',parentId:null,nature:'credit'},
-{code:'4103',name:'إيرادات أخرى',type:'revenue',parentId:null,nature:'credit'},
-{code:'4901',name:'خصم مسموح به',type:'revenue',parentId:null,nature:'debit'},
-// المصروفات
-{code:'5',name:'المصروفات',type:'expense',parentId:null,nature:'debit'},
-{code:'5101',name:'تكلفة البضاعة المباعة',type:'expense',parentId:null,nature:'debit'},
-{code:'5102',name:'الرواتب والأجور',type:'expense',parentId:null,nature:'debit'},
-{code:'5103',name:'الإيجار',type:'expense',parentId:null,nature:'debit'},
-{code:'5104',name:'الكهرباء والماء',type:'expense',parentId:null,nature:'debit'},
-{code:'5105',name:'الاتصالات',type:'expense',parentId:null,nature:'debit'},
-{code:'5106',name:'مصروفات تسويقية',type:'expense',parentId:null,nature:'debit'},
-{code:'5107',name:'قرطاسية ومكتبية',type:'expense',parentId:null,nature:'debit'},
-{code:'5108',name:'صيانة وإصلاح',type:'expense',parentId:null,nature:'debit'},
-{code:'5109',name:'مصروفات بنكية',type:'expense',parentId:null,nature:'debit'},
-{code:'5110',name:'إهلاك الأصول',type:'expense',parentId:null,nature:'debit'},
-{code:'5190',name:'مصروفات أخرى',type:'expense',parentId:null,nature:'debit'}
+{code:'1',name:'الأصول',type:'asset',nature:'debit',isParent:true},
+{code:'11',name:'الأصول المتداولة',type:'asset',nature:'debit',isParent:true},
+{code:'1101',name:'الصندوق',type:'asset',nature:'debit',isParent:false},
+{code:'1102',name:'البنك',type:'asset',nature:'debit',isParent:false},
+{code:'1103',name:'العملاء',type:'asset',nature:'debit',isParent:false},
+{code:'1104',name:'المخزون',type:'asset',nature:'debit',isParent:false},
+{code:'1105',name:'مصروفات مدفوعة مقدماً',type:'asset',nature:'debit',isParent:false},
+{code:'12',name:'الأصول الثابتة',type:'asset',nature:'debit',isParent:true},
+{code:'1201',name:'أثاث ومعدات',type:'asset',nature:'debit',isParent:false},
+{code:'1202',name:'سيارات',type:'asset',nature:'debit',isParent:false},
+{code:'1203',name:'مجمع إهلاك الأثاث',type:'asset',nature:'credit',isParent:false},
+{code:'2',name:'الالتزامات',type:'liability',nature:'credit',isParent:true},
+{code:'21',name:'الالتزامات المتداولة',type:'liability',nature:'credit',isParent:true},
+{code:'2101',name:'الموردين',type:'liability',nature:'credit',isParent:false},
+{code:'2102',name:'مصروفات مستحقة',type:'liability',nature:'credit',isParent:false},
+{code:'2103',name:'ضريبة القيمة المضافة',type:'liability',nature:'credit',isParent:false},
+{code:'2104',name:'رواتب مستحقة',type:'liability',nature:'credit',isParent:false},
+{code:'2201',name:'قروض طويلة الأجل',type:'liability',nature:'credit',isParent:false},
+{code:'3',name:'حقوق الملكية',type:'equity',nature:'credit',isParent:true},
+{code:'3101',name:'رأس المال',type:'equity',nature:'credit',isParent:false},
+{code:'3102',name:'الأرباح المحتجزة',type:'equity',nature:'credit',isParent:false},
+{code:'3103',name:'المسحوبات الشخصية',type:'equity',nature:'debit',isParent:false},
+{code:'4',name:'الإيرادات',type:'revenue',nature:'credit',isParent:true},
+{code:'4101',name:'إيرادات المبيعات',type:'revenue',nature:'credit',isParent:false},
+{code:'4102',name:'إيرادات الخدمات',type:'revenue',nature:'credit',isParent:false},
+{code:'4103',name:'إيرادات أخرى',type:'revenue',nature:'credit',isParent:false},
+{code:'4901',name:'خصم مسموح به',type:'revenue',nature:'debit',isParent:false},
+{code:'5',name:'المصروفات',type:'expense',nature:'debit',isParent:true},
+{code:'5101',name:'تكلفة البضاعة المباعة',type:'expense',nature:'debit',isParent:false},
+{code:'5102',name:'الرواتب والأجور',type:'expense',nature:'debit',isParent:false},
+{code:'5103',name:'الإيجار',type:'expense',nature:'debit',isParent:false},
+{code:'5104',name:'الكهرباء والماء',type:'expense',nature:'debit',isParent:false},
+{code:'5105',name:'الاتصالات',type:'expense',nature:'debit',isParent:false},
+{code:'5106',name:'مصروفات تسويقية',type:'expense',nature:'debit',isParent:false},
+{code:'5107',name:'قرطاسية ومكتبية',type:'expense',nature:'debit',isParent:false},
+{code:'5108',name:'صيانة وإصلاح',type:'expense',nature:'debit',isParent:false},
+{code:'5109',name:'مصروفات بنكية',type:'expense',nature:'debit',isParent:false},
+{code:'5110',name:'إهلاك الأصول',type:'expense',nature:'debit',isParent:false},
+{code:'5190',name:'مصروفات أخرى',type:'expense',nature:'debit',isParent:false}
 ];
-
-// خريطة لحفظ IDs
 const codeToId={};
-
-// إضافة الحسابات الرئيسية أولاً
-for(const acc of accounts.filter(a=>a.code.length<=2)){
+for(const acc of accounts){
+const parentCode=acc.code.length>2?acc.code.substring(0,2):null;
+const parentId=parentCode?codeToId[parentCode]:null;
 const id=await dbAdd(STORES.accounts,{
-companyId:companyId,
-code:acc.code,
-name:acc.name,
-type:acc.type,
-parentId:null,
-nature:acc.nature,
-isParent:true,
-createdAt:new Date().toISOString()
-});
-codeToId[acc.code]=id;
-}
-
-// إضافة الحسابات الفرعية
-for(const acc of accounts.filter(a=>a.code.length>2)){
-const parentCode=acc.code.substring(0,2);
-const parentId=codeToId[parentCode]||null;
-const id=await dbAdd(STORES.accounts,{
-companyId:companyId,
-code:acc.code,
-name:acc.name,
-type:acc.type,
-parentId:parentId,
-nature:acc.nature,
-isParent:false,
+companyId:companyId,code:acc.code,name:acc.name,type:acc.type,
+parentId:parentId,nature:acc.nature,isParent:acc.isParent,
 createdAt:new Date().toISOString()
 });
 codeToId[acc.code]=id;
@@ -564,11 +523,12 @@ async function loadCompaniesIntoSelector(){
 const cs=await getAllCompanies();
 const sel=document.getElementById('companySelector');
 sel.innerHTML='';
-cs.forEach(c=>{
-const o=document.createElement('option');
-o.value=c.id;o.textContent=c.name;
-sel.appendChild(o);
-});
+if(cs.length===0){
+sel.innerHTML='<option value="">لا توجد شركات</option>';
+document.getElementById('currentCompanyLabel').textContent='لا توجد شركات - أضف شركة';
+return;
+}
+cs.forEach(c=>{const o=document.createElement('option');o.value=c.id;o.textContent=c.name;sel.appendChild(o)});
 const saved=parseInt(localStorage.getItem('currentCompanyId'));
 const active=cs.find(c=>c.id===saved)||cs[0];
 if(active)await switchCompany(active.id);
@@ -585,13 +545,7 @@ return a.sort((x,y)=>x.code.localeCompare(y.code));
 async function addAccount(data){
 data.companyId=currentCompany.id;
 data.createdAt=new Date().toISOString();
-if(!data.nature){
-data.nature=ACCOUNT_TYPES[data.type]?.nature||'debit';
-}
-if(data.parentId){
-const parent=await dbGet(STORES.accounts,parseInt(data.parentId));
-if(parent)parent.isParent=true;
-}
+if(!data.nature)data.nature=ACCOUNT_TYPES[data.type]?.nature||'debit';
 return await dbAdd(STORES.accounts,data);
 }
 
@@ -608,48 +562,25 @@ document.getElementById('dashAccounts').textContent=accounts.length;
 function renderAccountTree(accounts){
 const c=document.getElementById('accountTree');
 c.innerHTML='';
-if(accounts.length===0){
-c.innerHTML='<div class="empty-state">لا توجد حسابات. سيتم إنشاء دليل افتراضي عند إضافة شركة جديدة.</div>';
-return;
-}
-// عرض حسب الشجرة (الأب ثم الأبناء)
-const parents=accounts.filter(a=>!a.parentId);
-parents.forEach(p=>{
-c.appendChild(renderAccountItem(p,1,accounts));
-const children=accounts.filter(a=>a.parentId===p.id);
-children.forEach(ch=>{
-c.appendChild(renderAccountItem(ch,2,accounts));
-const grandchildren=accounts.filter(a=>a.parentId===ch.id);
-grandchildren.forEach(gc=>{
-c.appendChild(renderAccountItem(gc,3,accounts));
-});
-});
-});
-}
-
-function renderAccountItem(acc,level,accounts){
+if(accounts.length===0){c.innerHTML='<div class="empty-state">لا توجد حسابات</div>';return}
+accounts.forEach(acc=>{
+const level=acc.code.length<=1?1:(acc.code.length<=2?2:3);
 const div=document.createElement('div');
 div.className='account-item level-'+level;
 const typeInfo=ACCOUNT_TYPES[acc.type]||{label:acc.type,badge:'badge-asset'};
 div.innerHTML=`
-<div>
-<strong>${acc.code}</strong> - ${acc.name}
-<span class="badge ${typeInfo.badge}" style="margin-right:10px">${typeInfo.label}</span>
-</div>
-<div>
-<button class="btn-danger" onclick="removeAccount(${acc.id})" style="padding:4px 10px;font-size:.75rem">🗑️</button>
-</div>`;
-return div;
+<div><strong>${acc.code}</strong> - ${acc.name} <span class="badge ${typeInfo.badge}" style="margin-right:8px">${typeInfo.label}</span></div>
+<div><button class="btn-danger" onclick="removeAccount(${acc.id})" style="padding:4px 10px;font-size:.75rem">🗑️</button></div>`;
+c.appendChild(div);
+});
 }
 
 function fillAccountParentSelect(accounts){
 const sel=document.getElementById('accountParent');
 const cur=sel.value;
-sel.innerHTML='<option value="">- بدون أب (حساب رئيسي) -</option>';
-accounts.filter(a=>a.code.length<=2||a.isParent).forEach(a=>{
-const o=document.createElement('option');
-o.value=a.id;o.textContent=`${a.code} - ${a.name}`;
-sel.appendChild(o);
+sel.innerHTML='<option value="">- بدون أب -</option>';
+accounts.filter(a=>a.code.length<=2).forEach(a=>{
+const o=document.createElement('option');o.value=a.id;o.textContent=`${a.code} - ${a.name}`;sel.appendChild(o);
 });
 if(cur)sel.value=cur;
 }
@@ -658,11 +589,8 @@ function fillFundAccountSelect(accounts){
 const sel=document.getElementById('fundAccountId');
 const cur=sel.value;
 sel.innerHTML='<option value="">- ربط بحساب -</option>';
-// الصندوق أو البنك فقط
-accounts.filter(a=>['1101','1102'].includes(a.code)||a.name.includes('صندوق')||a.name.includes('بنك')).forEach(a=>{
-const o=document.createElement('option');
-o.value=a.id;o.textContent=`${a.code} - ${a.name}`;
-sel.appendChild(o);
+accounts.filter(a=>a.code==='1101'||a.code==='1102').forEach(a=>{
+const o=document.createElement('option');o.value=a.id;o.textContent=`${a.code} - ${a.name}`;sel.appendChild(o);
 });
 if(cur)sel.value=cur;
 }
@@ -672,15 +600,13 @@ const sel=document.getElementById('ledgerAccount');
 const cur=sel.value;
 sel.innerHTML='<option value="">اختر حساباً</option>';
 accounts.filter(a=>!a.isParent).forEach(a=>{
-const o=document.createElement('option');
-o.value=a.id;o.textContent=`${a.code} - ${a.name}`;
-sel.appendChild(o);
+const o=document.createElement('option');o.value=a.id;o.textContent=`${a.code} - ${a.name}`;sel.appendChild(o);
 });
 if(cur)sel.value=cur;
 }
 
 async function removeAccount(id){
-if(!confirm('حذف الحساب؟ لا يمكن حذف حساب له حركات.'))return;
+if(!confirm('حذف الحساب؟'))return;
 const lines=await dbGetAll(STORES.entryLines,'accountId',id);
 if(lines.length>0){showToast('لا يمكن حذف حساب له حركات',true);return}
 await dbDel(STORES.accounts,id);
@@ -689,11 +615,9 @@ showToast('تم الحذف');
 }
 
 // ===============================
-// الصناديق والبنوك
+// الصناديق
 // ===============================
-async function getCompanyFunds(cid){
-return await dbGetAll(STORES.funds,'companyId',cid);
-}
+async function getCompanyFunds(cid){return await dbGetAll(STORES.funds,'companyId',cid)}
 
 async function addFund(data){
 data.companyId=currentCompany.id;
@@ -707,9 +631,8 @@ const funds=await getCompanyFunds(currentCompany.id);
 const accounts=await getCompanyAccounts(currentCompany.id);
 const tb=document.querySelector('#fundTable tbody');
 tb.innerHTML='';
-if(funds.length===0){
-tb.innerHTML='<tr><td colspan="7" class="empty-state">لا توجد صناديق</td></tr>';
-}else{
+if(funds.length===0){tb.innerHTML='<tr><td colspan="7" class="empty-state">لا توجد صناديق</td></tr>'}
+else{
 for(const f of funds){
 const acc=accounts.find(a=>a.id===f.accountId);
 const balance=await getAccountBalance(f.accountId);
@@ -722,9 +645,7 @@ row.innerHTML=`
 <td>${typeLabels[f.type]||f.type}</td>
 <td>${acc?acc.code+' - '+acc.name:'-'}</td>
 <td class="${balance>=0?'text-income':'text-expense'}">${balance.toFixed(2)}</td>
-<td>
-<button class="btn-danger" onclick="removeFund(${f.id})">🗑️</button>
-</td>`;
+<td><button class="btn-danger" onclick="removeFund(${f.id})">🗑️</button></td>`;
 tb.appendChild(row);
 }
 }
@@ -739,42 +660,27 @@ showToast('تم الحذف');
 }
 
 // ===============================
-// القيود اليومية (القيد المزدوج)
+// القيود
 // ===============================
-async function getCompanyEntries(cid){
-return await dbGetAll(STORES.entries,'companyId',cid);
-}
-
-async function getEntryLines(entryId){
-return await dbGetAll(STORES.entryLines,'entryId',entryId);
-}
+async function getCompanyEntries(cid){return await dbGetAll(STORES.entries,'companyId',cid)}
+async function getEntryLines(entryId){return await dbGetAll(STORES.entryLines,'entryId',entryId)}
 
 async function addEntry(data,lines){
 data.companyId=currentCompany.id;
 data.userId=currentUser.id;
 data.userName=currentUser.fullName;
 data.createdAt=new Date().toISOString();
-
-// التحقق من التوازن
 const totalDebit=lines.reduce((s,l)=>s+(l.debit||0),0);
 const totalCredit=lines.reduce((s,l)=>s+(l.credit||0),0);
-if(Math.abs(totalDebit-totalCredit)>0.01){
-throw new Error(`القيد غير متوازن: مدين ${totalDebit.toFixed(2)} ≠ دائن ${totalCredit.toFixed(2)}`);
-}
-if(totalDebit===0){
-throw new Error('القيد فارغ');
-}
-
+if(Math.abs(totalDebit-totalCredit)>0.01)throw new Error(`القيد غير متوازن`);
+if(totalDebit===0)throw new Error('القيد فارغ');
 const entryId=await dbAdd(STORES.entries,data);
 for(const line of lines){
 if(line.accountId&&(line.debit||line.credit)){
 await dbAdd(STORES.entryLines,{
-entryId:entryId,
-accountId:parseInt(line.accountId),
-debit:parseFloat(line.debit)||0,
-credit:parseFloat(line.credit)||0,
-note:line.note||'',
-companyId:currentCompany.id
+entryId:entryId,accountId:parseInt(line.accountId),
+debit:parseFloat(line.debit)||0,credit:parseFloat(line.credit)||0,
+note:line.note||'',companyId:currentCompany.id
 });
 }
 }
@@ -784,8 +690,7 @@ return entryId;
 async function getEntryNumber(cid){
 const entries=await getCompanyEntries(cid);
 const y=new Date().getFullYear();
-const count=entries.length+1;
-return `JV-${y}-${String(count).padStart(5,'0')}`;
+return `JV-${y}-${String(entries.length+1).padStart(5,'0')}`;
 }
 
 async function loadEntries(){
@@ -794,18 +699,16 @@ const entries=await getCompanyEntries(currentCompany.id);
 const tb=document.querySelector('#entryTable tbody');
 tb.innerHTML='';
 const sorted=entries.sort((a,b)=>new Date(b.date)-new Date(a.date));
-if(sorted.length===0){
-tb.innerHTML='<tr><td colspan="7" class="empty-state">لا توجد قيود</td></tr>';
-}else{
+if(sorted.length===0){tb.innerHTML='<tr><td colspan="7" class="empty-state">لا توجد قيود</td></tr>'}
+else{
 sorted.forEach((e,i)=>{
-const total=(e.totalDebit||0);
 const row=document.createElement('tr');
 row.innerHTML=`
 <td>${i+1}</td>
 <td>${e.date}</td>
 <td><strong>${e.number}</strong></td>
 <td>${e.description}</td>
-<td class="text-income">${total.toFixed(2)}</td>
+<td class="text-income">${(e.totalDebit||0).toFixed(2)}</td>
 <td>${e.userName||'-'}</td>
 <td>
 <button class="btn-primary" style="padding:5px 10px;font-size:.8rem" onclick="viewEntry(${e.id})">👁️</button>
@@ -819,7 +722,7 @@ document.getElementById('dashTotalEntries').textContent=entries.length;
 }
 
 async function removeEntry(id){
-if(!confirm('حذف القيد وكل بنوده؟'))return;
+if(!confirm('حذف القيد؟'))return;
 const lines=await getEntryLines(id);
 for(const l of lines)await dbDel(STORES.entryLines,l.id);
 await dbDel(STORES.entries,id);
@@ -890,39 +793,19 @@ accSel.required=true;
 accSel.innerHTML='<option value="">اختر حساب</option>';
 getCompanyAccounts(currentCompany.id).then(accounts=>{
 accounts.filter(a=>!a.isParent).forEach(a=>{
-const o=document.createElement('option');
-o.value=a.id;o.textContent=`${a.code} - ${a.name}`;
-accSel.appendChild(o);
+const o=document.createElement('option');o.value=a.id;o.textContent=`${a.code} - ${a.name}`;accSel.appendChild(o);
 });
 });
 const note=document.createElement('input');
-note.type='text';
-note.className='line-note';
-note.placeholder='ملاحظة';
+note.type='text';note.className='line-note';note.placeholder='ملاحظة';
 const debit=document.createElement('input');
-debit.type='number';
-debit.className='line-debit';
-debit.placeholder='مدين';
-debit.step='0.01';
-debit.min='0';
-debit.oninput=updateEntryTotals;
+debit.type='number';debit.className='line-debit';debit.placeholder='مدين';debit.step='0.01';debit.min='0';debit.oninput=updateEntryTotals;
 const credit=document.createElement('input');
-credit.type='number';
-credit.className='line-credit';
-credit.placeholder='دائن';
-credit.step='0.01';
-credit.min='0';
-credit.oninput=updateEntryTotals;
+credit.type='number';credit.className='line-credit';credit.placeholder='دائن';credit.step='0.01';credit.min='0';credit.oninput=updateEntryTotals;
 const del=document.createElement('button');
-del.type='button';
-del.textContent='🗑️';
-del.className='btn-danger';
+del.type='button';del.textContent='🗑️';del.className='btn-danger';
 del.onclick=()=>{row.remove();updateEntryTotals()};
-row.appendChild(accSel);
-row.appendChild(note);
-row.appendChild(debit);
-row.appendChild(credit);
-row.appendChild(del);
+row.appendChild(accSel);row.appendChild(note);row.appendChild(debit);row.appendChild(credit);row.appendChild(del);
 c.appendChild(row);
 }
 
@@ -932,12 +815,11 @@ document.querySelectorAll('#entryLines .entry-line').forEach(r=>{
 td+=parseFloat(r.querySelector('.line-debit').value)||0;
 tc+=parseFloat(r.querySelector('.line-credit').value)||0;
 });
-document.getElementById('totalDebitView').textContent=td.toFixed(2);
-document.getElementById('totalCreditView').textContent=tc.toFixed(2);
+const el1=document.getElementById('totalDebitView');if(el1)el1.textContent=td.toFixed(2);
+const el2=document.getElementById('totalCreditView');if(el2)el2.textContent=tc.toFixed(2);
 const diff=td-tc;
 const diffEl=document.getElementById('diffView');
-diffEl.textContent=diff.toFixed(2);
-diffEl.style.color=Math.abs(diff)<0.01?'#10b981':'#ef4444';
+if(diffEl){diffEl.textContent=diff.toFixed(2);diffEl.style.color=Math.abs(diff)<0.01?'#10b981':'#ef4444'}
 }
 
 async function saveEntry(){
@@ -947,23 +829,17 @@ const accountId=r.querySelector('.line-account').value;
 const debit=parseFloat(r.querySelector('.line-debit').value)||0;
 const credit=parseFloat(r.querySelector('.line-credit').value)||0;
 const note=r.querySelector('.line-note').value;
-if(accountId&&(debit||credit)){
-lines.push({accountId,debit,credit,note});
-}
+if(accountId&&(debit||credit))lines.push({accountId,debit,credit,note});
 });
 if(lines.length<2){showToast('القيد يحتاج سطرين على الأقل',true);return}
 const totalDebit=lines.reduce((s,l)=>s+l.debit,0);
 const totalCredit=lines.reduce((s,l)=>s+l.credit,0);
-if(Math.abs(totalDebit-totalCredit)>0.01){
-showToast(`القيد غير متوازن: مدين ${totalDebit.toFixed(2)} ≠ دائن ${totalCredit.toFixed(2)}`,true);
-return;
-}
+if(Math.abs(totalDebit-totalCredit)>0.01){showToast(`القيد غير متوازن`,true);return}
 const entry={
 number:document.getElementById('entryNumber').value,
 date:document.getElementById('entryDate').value,
 description:document.getElementById('entryDescription').value,
-totalDebit:totalDebit,
-totalCredit:totalCredit
+totalDebit:totalDebit,totalCredit:totalCredit
 };
 try{
 await addEntry(entry,lines);
@@ -971,40 +847,21 @@ closeModal();
 loadEntries();
 loadDashboard();
 showToast('✅ تم حفظ القيد');
-}catch(e){
-showToast(e.message,true);
-}
+}catch(e){showToast(e.message,true)}
 }
 
 // ===============================
 // رصيد الحساب
 // ===============================
 async function getAccountBalance(accountId){
+if(!accountId)return 0;
 const lines=await dbGetAll(STORES.entryLines,'accountId',accountId);
 let debit=0,credit=0;
-lines.forEach(l=>{
-debit+=l.debit||0;
-credit+=l.credit||0;
-});
+lines.forEach(l=>{debit+=l.debit||0;credit+=l.credit||0});
 const acc=await dbGet(STORES.accounts,accountId);
 if(!acc)return 0;
-// طبيعة الحساب
 if(acc.nature==='debit')return debit-credit;
 return credit-debit;
-}
-
-async function getAllAccountBalances(cid){
-const accounts=await getCompanyAccounts(cid);
-const lines=await dbGetAll(STORES.entryLines,'companyId',cid);
-const balances={};
-accounts.forEach(a=>{balances[a.id]={debit:0,credit:0}});
-lines.forEach(l=>{
-if(balances[l.accountId]){
-balances[l.accountId].debit+=l.debit||0;
-balances[l.accountId].credit+=l.credit||0;
-}
-});
-return {accounts,balances};
 }
 
 // ===============================
@@ -1023,15 +880,10 @@ for(const e of entries){
 if(from&&e.date<from)continue;
 if(to&&e.date>to)continue;
 const lines=await getEntryLines(e.id);
-lines.forEach(l=>{
-allLines.push({...l,entryNumber:e.number,entryDate:e.date,entryDesc:e.description});
-});
+lines.forEach(l=>allLines.push({...l,entryNumber:e.number,entryDate:e.date,entryDesc:e.description}));
 }
 allLines.sort((a,b)=>new Date(a.entryDate)-new Date(b.entryDate));
-if(allLines.length===0){
-tb.innerHTML='<tr><td colspan="6" class="empty-state">لا توجد قيود في هذه الفترة</td></tr>';
-return;
-}
+if(allLines.length===0){tb.innerHTML='<tr><td colspan="6" class="empty-state">لا توجد قيود</td></tr>';return}
 allLines.forEach(l=>{
 const acc=accounts.find(a=>a.id===l.accountId);
 const row=document.createElement('tr');
@@ -1050,9 +902,8 @@ tb.appendChild(row);
 // دفتر الأستاذ
 // ===============================
 function loadLedgerAccounts(){
-getCompanyAccounts(currentCompany.id).then(accounts=>{
-fillLedgerAccountSelect(accounts);
-});
+if(!currentCompany)return;
+getCompanyAccounts(currentCompany.id).then(accounts=>fillLedgerAccountSelect(accounts));
 }
 
 async function loadLedger(){
@@ -1066,42 +917,27 @@ const allLines=await dbGetAll(STORES.entryLines,'accountId',accId);
 const entries=await getCompanyEntries(currentCompany.id);
 const entryMap={};
 entries.forEach(e=>{entryMap[e.id]=e});
-
-// ترتيب حسب التاريخ
 const linesWithDate=allLines.map(l=>{
 const e=entryMap[l.entryId];
-return {...l,date:e?e.date:'',number:e?e.number:'',desc:e?e.description:''};
+return{...l,date:e?e.date:'',number:e?e.number:'',desc:e?e.description:''};
 }).sort((a,b)=>new Date(a.date)-new Date(b.date));
-
-// الرصيد الافتتاحي
-let opening=0;
-let debit=0,credit=0;
+let opening=0,debit=0,credit=0;
 const filtered=[];
 linesWithDate.forEach(l=>{
-if(from&&l.date<from){
-opening+=acc.nature==='debit'?(l.debit-l.credit):(l.credit-l.debit);
-return;
-}
+if(from&&l.date<from){opening+=acc.nature==='debit'?(l.debit-l.credit):(l.credit-l.debit);return}
 if(to&&l.date>to)return;
-debit+=l.debit;
-credit+=l.credit;
+debit+=l.debit;credit+=l.credit;
 filtered.push(l);
 });
-
 const closing=opening+(acc.nature==='debit'?(debit-credit):(credit-debit));
-
 document.getElementById('ledgerSummary').style.display='block';
 document.getElementById('ledgerOpening').textContent=opening.toFixed(2);
 document.getElementById('ledgerDebit').textContent=debit.toFixed(2);
 document.getElementById('ledgerCredit').textContent=credit.toFixed(2);
 document.getElementById('ledgerClosing').textContent=closing.toFixed(2);
-
 const tb=document.querySelector('#ledgerTable tbody');
 tb.innerHTML='';
-if(filtered.length===0){
-tb.innerHTML='<tr><td colspan="6" class="empty-state">لا توجد حركات</td></tr>';
-return;
-}
+if(filtered.length===0){tb.innerHTML='<tr><td colspan="6" class="empty-state">لا توجد حركات</td></tr>';return}
 let running=opening;
 filtered.forEach(l=>{
 running+=acc.nature==='debit'?(l.debit-l.credit):(l.credit-l.debit);
@@ -1126,29 +962,20 @@ const date=document.getElementById('trialDate').value;
 const accounts=await getCompanyAccounts(currentCompany.id);
 const tb=document.querySelector('#trialTable tbody');
 tb.innerHTML='';
-let totalD=0,totalC=0;
-accounts.forEach(a=>{
-if(a.isParent)return;
-});
-// استخدام دالة الأرصدة
 const lines=await dbGetAll(STORES.entryLines,'companyId',currentCompany.id);
 const entries=await getCompanyEntries(currentCompany.id);
 const entryMap={};
 entries.forEach(e=>{entryMap[e.id]=e});
-
 const balances={};
 accounts.forEach(a=>{balances[a.id]={debit:0,credit:0,balance:0}});
 lines.forEach(l=>{
-if(date){
-const e=entryMap[l.entryId];
-if(!e||e.date>date)return;
-}
+if(date){const e=entryMap[l.entryId];if(!e||e.date>date)return}
 if(balances[l.accountId]){
 balances[l.accountId].debit+=l.debit||0;
 balances[l.accountId].credit+=l.credit||0;
 }
 });
-
+let totalD=0,totalC=0;
 accounts.forEach(a=>{
 if(a.isParent)return;
 const b=balances[a.id];
@@ -1157,8 +984,7 @@ if(a.nature==='debit')balance=b.debit-b.credit;
 else balance=b.credit-b.debit;
 b.balance=balance;
 if(b.debit===0&&b.credit===0)return;
-totalD+=b.debit;
-totalC+=b.credit;
+totalD+=b.debit;totalC+=b.credit;
 const typeInfo=ACCOUNT_TYPES[a.type]||{label:a.type,badge:'badge-asset'};
 const row=document.createElement('tr');
 row.innerHTML=`
@@ -1170,7 +996,6 @@ row.innerHTML=`
 <td class="${balance>=0?'text-income':'text-expense'}">${balance.toFixed(2)}</td>`;
 tb.appendChild(row);
 });
-
 document.getElementById('totalDebit').textContent=totalD.toFixed(2);
 document.getElementById('totalCredit').textContent=totalC.toFixed(2);
 }
@@ -1183,8 +1008,6 @@ if(!currentCompany)return;
 const accounts=await getCompanyAccounts(currentCompany.id);
 const entries=await getCompanyEntries(currentCompany.id);
 const funds=await getCompanyFunds(currentCompany.id);
-
-// حساب إجماليات الأصول والالتزامات وحقوق الملكية
 const lines=await dbGetAll(STORES.entryLines,'companyId',currentCompany.id);
 let totalAssets=0,totalLiabilities=0,totalEquity=0;
 const balances={};
@@ -1201,38 +1024,25 @@ const b=balances[a.id];
 let balance=0;
 if(a.nature==='debit')balance=b.debit-b.credit;
 else balance=b.credit-b.debit;
-
-// جمع الإجماليات حسب النوع
-const parent=accounts.find(p=>p.id===a.parentId);
-const rootType=a.type;
-if(rootType==='asset'&&!a.name.includes('مجمع'))totalAssets+=balance;
-if(rootType==='liability')totalLiabilities+=balance;
-if(rootType==='equity')totalEquity+=balance;
+if(a.type==='asset'&&!a.name.includes('مجمع'))totalAssets+=balance;
+if(a.type==='liability')totalLiabilities+=balance;
+if(a.type==='equity')totalEquity+=balance;
 });
-
-// رصيد الصناديق
 let fundBalance=0;
 for(const f of funds){
-if(f.accountId){
-const b=await getAccountBalance(f.accountId);
-fundBalance+=b;
+if(f.accountId)fundBalance+=await getAccountBalance(f.accountId);
 }
-}
-
 document.getElementById('dashAssets').textContent=totalAssets.toFixed(2);
 document.getElementById('dashLiabilities').textContent=totalLiabilities.toFixed(2);
 document.getElementById('dashEquity').textContent=totalEquity.toFixed(2);
 document.getElementById('dashAccounts').textContent=accounts.length;
 document.getElementById('dashFunds').textContent=funds.length;
 document.getElementById('dashFundsBalance').textContent=fundBalance.toFixed(2);
-
-// آخر القيود
 const recent=entries.sort((a,b)=>new Date(b.date)-new Date(a.date)).slice(0,5);
 const tb=document.querySelector('#dashRecentTable tbody');
 tb.innerHTML='';
-if(recent.length===0){
-tb.innerHTML='<tr><td colspan="5" class="empty-state">لا توجد قيود</td></tr>';
-}else{
+if(recent.length===0){tb.innerHTML='<tr><td colspan="5" class="empty-state">لا توجد قيود</td></tr>'}
+else{
 recent.forEach(e=>{
 const row=document.createElement('tr');
 row.innerHTML=`
@@ -1254,17 +1064,13 @@ document.getElementById('modalTitle').textContent=title;
 document.getElementById('modalBody').innerHTML=html;
 document.getElementById('modalOverlay').classList.add('active');
 }
-
-function closeModal(){
-document.getElementById('modalOverlay').classList.remove('active');
-}
-
+function closeModal(){document.getElementById('modalOverlay').classList.remove('active')}
 function showToast(msg,isError){
 const t=document.createElement('div');
 t.className='toast'+(isError?' error':'');
 t.textContent=msg;
 document.body.appendChild(t);
-setTimeout(()=>t.remove(),2500);
+setTimeout(()=>t.remove(),3000);
 }
 
 // ===============================
@@ -1288,12 +1094,8 @@ let h=`<h4 style="margin-bottom:15px">➕ مستخدم جديد</h4>
 <h4 style="margin:20px 0 15px">👥 المستخدمون</h4>
 <table><thead><tr><th>الاسم</th><th>المستخدم</th><th>الدور</th><th>إجراء</th></tr></thead><tbody>`;
 users.forEach(u=>{
-h+=`<tr>
-<td>${u.fullName}</td>
-<td>${u.username}</td>
-<td>${ROLES[u.role]||u.role}</td>
-<td>${u.id!==currentUser.id?`<button class="btn-danger" onclick="delUserM(${u.id})">🗑️</button>`:'-'}</td>
-</tr>`;
+h+=`<tr><td>${u.fullName}</td><td>${u.username}</td><td>${ROLES[u.role]||u.role}</td>
+<td>${u.id!==currentUser.id?`<button class="btn-danger" onclick="delUserM(${u.id})">🗑️</button>`:'-'}</td></tr>`;
 });
 h+=`</tbody></table>`;
 openModal('👥 المستخدمين',h);
@@ -1304,17 +1106,11 @@ const fn=document.getElementById('nuFn').value.trim();
 const un=document.getElementById('nuUn').value.trim();
 const pw=document.getElementById('nuPw').value;
 if(!fn||!un||!pw){showToast('أكمل البيانات',true);return}
-try{
 const exists=await dbGetOne(STORES.users,'username',un);
 if(exists){showToast('اسم المستخدم موجود',true);return}
-await dbAdd(STORES.users,{
-username:un,password:simpleHash(pw),
-fullName:fn,role:document.getElementById('nuRl').value,
-createdAt:new Date().toISOString()
-});
+await dbAdd(STORES.users,{username:un,password:simpleHash(pw),fullName:fn,role:document.getElementById('nuRl').value,createdAt:new Date().toISOString()});
 showToast('✅ تم');
 openUsersModal();
-}catch(e){showToast(e.message,true)}
 }
 
 async function delUserM(id){
@@ -1340,15 +1136,11 @@ let h=`<h4 style="margin-bottom:15px">➕ شركة جديدة</h4>
 <h4 style="margin:20px 0 15px">🏢 الشركات</h4>
 <table><thead><tr><th>#</th><th>الاسم</th><th>الرقم الضريبي</th><th>إجراء</th></tr></thead><tbody>`;
 cs.forEach((c,i)=>{
-h+=`<tr>
-<td>${i+1}</td>
-<td>${c.name}</td>
-<td>${c.taxNumber||'-'}</td>
+h+=`<tr><td>${i+1}</td><td>${c.name}</td><td>${c.taxNumber||'-'}</td>
 <td>
 <button class="btn-primary" style="padding:5px 10px;font-size:.8rem" onclick="switchCompanyM(${c.id})">فتح</button>
 ${cs.length>1?`<button class="btn-danger" onclick="delCompanyM(${c.id})">🗑️</button>`:''}
-</td>
-</tr>`;
+</td></tr>`;
 });
 h+=`</tbody></table>`;
 openModal('🏢 الشركات',h);
@@ -1357,7 +1149,7 @@ openModal('🏢 الشركات',h);
 async function createCompanyM(){
 const n=document.getElementById('ncN').value.trim();
 if(!n){showToast('أدخل اسم الشركة',true);return}
-const id=await addCompany({
+await addCompany({
 name:n,
 taxNumber:document.getElementById('ncT').value.trim(),
 address:document.getElementById('ncA').value.trim()
@@ -1375,10 +1167,8 @@ showToast('تم تبديل الشركة');
 
 async function delCompanyM(id){
 if(!confirm('حذف الشركة وكل بياناتها؟'))return;
-try{
 const cs=await getAllCompanies();
 if(cs.length<=1){showToast('يجب الاحتفاظ بشركة واحدة',true);return}
-// حذف البيانات المرتبطة
 const accounts=await dbGetAll(STORES.accounts,'companyId',id);
 for(const a of accounts)await dbDel(STORES.accounts,a.id);
 const funds=await dbGetAll(STORES.funds,'companyId',id);
@@ -1391,49 +1181,33 @@ await dbDel(STORES.companies,id);
 showToast('تم الحذف');
 await loadCompaniesIntoSelector();
 openCompaniesModal();
-}catch(e){showToast(e.message,true)}
 }
 
 // ===============================
-// البيانات التجريبية
+// بيانات تجريبية
 // ===============================
 async function seedDemoData(){
 try{
-// إنشاء شركة
+showToast('⏳ جاري إنشاء البيانات...');
+const existing=await getAllCompanies();
+if(existing.length>0){
+if(!confirm('توجد شركات موجودة. هل تريد إضافة شركة جديدة؟'))return;
+}
 const cid=await addCompany({
 name:'شركة الأمل التجارية',
 taxNumber:'3001234567',
 address:'الرياض - السعودية'
 });
-
-// إنشاء صندوقين
 const accounts=await dbGetAll(STORES.accounts,'companyId',cid);
 const cashAccount=accounts.find(a=>a.code==='1101');
 const bankAccount=accounts.find(a=>a.code==='1102');
-
-await dbAdd(STORES.funds,{
-companyId:cid,
-code:'CSH-001',
-name:'الصندوق الرئيسي',
-type:'cash',
-accountId:cashAccount.id,
-createdAt:new Date().toISOString()
-});
-
-await dbAdd(STORES.funds,{
-companyId:cid,
-code:'BNK-001',
-name:'البنك الأهلي',
-type:'bank',
-accountId:bankAccount.id,
-bankName:'البنك الأهلي',
-createdAt:new Date().toISOString()
-});
-
-showToast('✅ تم إنشاء الشركة والحسابات والصناديق');
+await dbAdd(STORES.funds,{companyId:cid,code:'CSH-001',name:'الصندوق الرئيسي',type:'cash',accountId:cashAccount.id,createdAt:new Date().toISOString()});
+await dbAdd(STORES.funds,{companyId:cid,code:'BNK-001',name:'البنك الأهلي',type:'bank',accountId:bankAccount.id,bankName:'البنك الأهلي',createdAt:new Date().toISOString()});
+showToast('✅ تم! جاري إعادة التحميل...');
 setTimeout(()=>location.reload(),1500);
 }catch(e){
-showToast(e.message,true);
+console.error(e);
+showToast('خطأ: '+e.message,true);
 }
 }
 
@@ -1461,6 +1235,7 @@ if(p==='trial')loadTrial();
 // بدء التطبيق
 // ===============================
 document.addEventListener('DOMContentLoaded',async()=>{
+try{
 await openDB();
 await initAuth();
 
@@ -1474,9 +1249,7 @@ if(!r.ok){showToast(r.msg,true);return}
 document.getElementById('loginScreen').style.display='none';
 document.getElementById('app').style.display='block';
 document.getElementById('currentUser').textContent='👤 '+r.user.fullName;
-
 await loadCompaniesIntoSelector();
-
 document.getElementById('companySelector').addEventListener('change',async e=>{
 await switchCompany(parseInt(e.target.value));
 });
@@ -1486,26 +1259,25 @@ if(confirm('تسجيل الخروج؟'))logout();
 document.getElementById('manageUsersBtn').addEventListener('click',openUsersModal);
 document.getElementById('manageCompaniesBtn').addEventListener('click',openCompaniesModal);
 
-// نموذج الحساب
 document.getElementById('accountForm').addEventListener('submit',async e=>{
 e.preventDefault();
-if(!currentCompany)return;
+if(!currentCompany){showToast('أضف شركة أولاً',true);return}
 await addAccount({
 code:document.getElementById('accountCode').value.trim(),
 name:document.getElementById('accountName').value.trim(),
 type:document.getElementById('accountType').value,
 parentId:document.getElementById('accountParent').value||null,
-nature:document.getElementById('accountNature').value
+nature:document.getElementById('accountNature').value,
+isParent:!document.getElementById('accountParent').value
 });
 e.target.reset();
 loadAccounts();
 showToast('✅ تمت الإضافة');
 });
 
-// نموذج الصندوق
 document.getElementById('fundForm').addEventListener('submit',async e=>{
 e.preventDefault();
-if(!currentCompany)return;
+if(!currentCompany){showToast('أضف شركة أولاً',true);return}
 await addFund({
 code:document.getElementById('fundCode').value.trim(),
 name:document.getElementById('fundName').value.trim(),
@@ -1519,16 +1291,19 @@ loadFunds();
 showToast('✅ تمت الإضافة');
 });
 
-// modal overlay
 document.getElementById('modalOverlay').addEventListener('click',e=>{
 if(e.target.id==='modalOverlay')closeModal();
 });
 
 await loadDashboard();
+}catch(e){
+console.error('خطأ في بدء التطبيق:',e);
+alert('خطأ: '+e.message);
+}
 });
 
-// ربط الدوال العامة
 window.seedDemoData=seedDemoData;
+window.resetDatabase=resetDatabase;
 window.removeAccount=removeAccount;
 window.removeFund=removeFund;
 window.removeEntry=removeEntry;
